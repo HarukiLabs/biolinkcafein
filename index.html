@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Personal profile hub — gaming identity, social links, and online presence." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Nacht — Profile Hub</title>
+
+  <!-- Google Fonts — Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ LOADING SCREEN ═══════════════════ -->
+  <div id="loading-screen" class="loading-screen" aria-label="Loading">
+    <div class="loading__content">
+      <div class="loading__avatar-ring">
+        <div class="loading__avatar">
+          <img src="assets/avatar.jpg" alt="" width="60" height="60" />
+        </div>
+      </div>
+      <p class="loading__name">Nacht</p>
+      <div class="loading__bar">
+        <div class="loading__bar-fill" id="loading-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ AMBIENT GLOW ═══════════════════ -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- ═══════════════════ MAIN WRAPPER ═══════════════════ -->
+  <main id="main-content" class="main-hidden">
+
+    <!-- ── HERO ── -->
+    <section id="hero" class="section hero" aria-label="Hero">
+      <div class="hero__avatar-ring reveal">
+        <div class="hero__avatar">
+          <img src="assets/avatar.jpg" alt="Nacht Avatar" width="94" height="94" class="hero__avatar-img" />
+        </div>
+      </div>
+      <h1 class="hero__name reveal reveal--delay-1">Nacht</h1>
+      <div class="hero__tagline reveal reveal--delay-2">
+        <span class="typewriter" id="typewriter"></span>
+        <span class="typewriter__cursor" aria-hidden="true">|</span>
+      </div>
+      <p class="hero__bio reveal reveal--delay-3">
+        if i was falling off a building would you grow angel wings and catch me
+      </p>
+      <div class="hero__scroll-hint reveal reveal--delay-4" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      </div>
+    </section>
+
+    <!-- ── GAMING IDENTITY ── -->
+    <section id="gaming" class="section" aria-label="Gaming Identity">
+      <h2 class="section__title reveal">
+        <svg class="section__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M12 12h.01"/><path d="M7 12v-2"/><path d="M7 12v2"/><path d="M5 12h4"/><path d="m17 10-2 2 2 2"/></svg>
+        Gaming Identity
+      </h2>
+
+      <div class="cards-grid">
+        <!-- Honkai Star Rail -->
+        <div class="card card--game reveal" id="card-hsr">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__inner">
+            <div class="card__header">
+              <div class="card__badge card__badge--hsr">HSR</div>
+              <span class="card__label">Honkai Star Rail</span>
+            </div>
+            <div class="card__body">
+              <span class="card__uid-label">UID</span>
+              <span class="card__uid" id="uid-hsr">808576865</span>
+            </div>
+            <button class="card__copy" data-copy="808576865" aria-label="Copy UID" id="copy-hsr">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Valorant -->
+        <div class="card card--game reveal" id="card-val">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__inner">
+            <div class="card__header">
+              <div class="card__badge card__badge--val">VAL</div>
+              <span class="card__label">Valorant</span>
+            </div>
+            <div class="card__body">
+              <span class="card__uid-label">Riot ID</span>
+              <span class="card__uid" id="uid-val">Tukang Bubur #biji</span>
+            </div>
+            <button class="card__copy" data-copy="Tukang Bubur #biji" aria-label="Copy Riot ID" id="copy-val">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SOCIAL LINKS ── -->
+    <section id="socials" class="section" aria-label="Social Links">
+      <h2 class="section__title reveal">
+        <svg class="section__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Social Links
+      </h2>
+
+      <div class="links-list">
+
+        <!-- Steam -->
+        <a href="https://steamcommunity.com/id/hattancafein/" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-steam">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-9.96 9.04l5.35 2.21a2.83 2.83 0 0 1 1.6-.49h.07l2.39-3.46v-.05a3.78 3.78 0 1 1 3.78 3.78h-.09l-3.4 2.43a2.84 2.84 0 0 1-5.66.3L1.2 13.56A10 10 0 1 0 12 2Zm-4.89 14.3 1.21-.5a2.13 2.13 0 0 0 2.12 1.7 2.14 2.14 0 0 0 .77-4.13l-1.25.52a2.84 2.84 0 0 0-2.85 2.41Zm8.67-5.56a2.52 2.52 0 1 0-2.52-2.52 2.52 2.52 0 0 0 2.52 2.52Z"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">Steam</span>
+            <span class="link-btn__handle">hattancafein</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <!-- MyAnimeList -->
+        <a href="https://myanimelist.net/profile/Hazelnacht" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-mal">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M2 4v16h20V4H2Zm3 13V8.5l2.5 5 2.5-5V17H8.5v-5l-1 2h-1l-1-2v5H4Zm9 0-3-9h1.5l2 6 2-6H17l-3 9h-1Zm6 0V8h1.5v7.5H22V17h-3Z"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">MyAnimeList</span>
+            <span class="link-btn__handle">Hazelnacht</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/nacht.nash/" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-ig">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">Instagram</span>
+            <span class="link-btn__handle">@nacht.nash</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@nachtmieayam" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-tiktok">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.86 2.86 0 0 1 .9.15V9.01a6.27 6.27 0 0 0-.9-.07 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.05a8.27 8.27 0 0 0 4.85 1.56V7.16a4.83 4.83 0 0 1-1.09-.47Z"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">TikTok</span>
+            <span class="link-btn__handle">@nachtmieayam</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <!-- Twitter / X -->
+        <a href="https://x.com/KaorukoHanreiii" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-x">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">X / Twitter</span>
+            <span class="link-btn__handle">@KaorukoHanreiii</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/HarukiLabs" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-github">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.49.5.09.682-.218.682-.483 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.16 22 16.418 22 12c0-5.523-4.477-10-10-10Z"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">GitHub</span>
+            <span class="link-btn__handle">HarukiLabs</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+        <!-- Hugging Face -->
+        <a href="https://huggingface.co/HazelFar" target="_blank" rel="noopener noreferrer" class="link-btn reveal" id="link-hf">
+          <div class="link-btn__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2.5 8.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm5 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5ZM8.4 14.2a.6.6 0 0 1 .83-.17 5.4 5.4 0 0 0 5.54 0 .6.6 0 0 1 .66 1A6.6 6.6 0 0 1 12 16.2a6.6 6.6 0 0 1-3.43-1.17.6.6 0 0 1-.17-.83Z"/></svg>
+          </div>
+          <div class="link-btn__text">
+            <span class="link-btn__name">Hugging Face</span>
+            <span class="link-btn__handle">HazelFar</span>
+          </div>
+          <svg class="link-btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer id="footer" class="footer reveal">
+      <p class="footer__text">© 2026 Nacht — built with ☕ and sleepless nights</p>
+    </footer>
+
+  </main>
+
+  <!-- ═══════════════════ WAIFU MASCOT ═══════════════════ -->
+  <div id="waifu" class="waifu" aria-label="Mascot character">
+    <div class="waifu__bubble" id="waifu-bubble" aria-live="polite"></div>
+    <div class="waifu__character" id="waifu-character">
+      <img src="assets/waifu.png" alt="Waifu mascot" class="waifu__img" width="180" height="260" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast" aria-live="polite" aria-atomic="true">Copied!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
